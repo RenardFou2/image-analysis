@@ -1,6 +1,5 @@
 "use client";
 
-// pages/index.js
 import React, { useState } from "react";
 
 function Home() {
@@ -47,7 +46,6 @@ function Home() {
   const processImage = () => {
     if (!image) return;
 
-    // Create a canvas to process the image
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
     const img = new Image();
@@ -72,17 +70,15 @@ function Home() {
 
         const [h, s, v] = rgbToHsv(r, g, b);
 
-        // Define green as Hue between 60-120, with sufficient saturation and brightness
         if (h >= 40 && h <= 120 && s > 40 && v > 30) {
           greenPixels++;
         }
 
-        // Define red as Hue between 0-20 or 340-360, with sufficient saturation and brightness
         if ((h >= 0 && h <= 30) || (h >= 300 && h <= 360) && s > 40 && v > 30) {
           redPixels++;
         }
 
-        // Define blue as Hue between 180-240, with sufficient saturation and brightness
+        
         if (h >= 130 && h <= 290 && s > 20 && v > 10) {
           bluePixels++;
         }
